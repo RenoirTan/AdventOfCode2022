@@ -9,5 +9,6 @@ func GetDay(d uint64) Day {
     return []Day{
         nil,
         &Day01{},
+        &Day02{},
     }[d]
 }
