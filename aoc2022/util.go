@@ -1,10 +1,9 @@
 package aoc2022
 
 import (
+	"cmp"
 	"regexp"
 	"sort"
-
-	"golang.org/x/exp/constraints"
 )
 
 var splitLinesPattern *regexp.Regexp
@@ -28,7 +27,7 @@ func TypeCast[T any](object any) *T {
     }
 }
 
-func Sort[T constraints.Ordered](s []T) {
+func Sort[T cmp.Ordered](s []T) {
     sort.Slice(s, func(i, j int) bool {
         return s[i] < s[j]
     })
