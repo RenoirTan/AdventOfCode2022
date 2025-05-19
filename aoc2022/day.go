@@ -10,5 +10,6 @@ func GetDay(d uint64) Day {
         nil,
         &Day01{},
         &Day02{},
+        &Day03{},
     }[d]
 }
