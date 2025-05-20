@@ -1,8 +1,9 @@
-package aoc2022
+package aoc2022_d03
 
 import (
 	"errors"
 
+	"github.com/RenoirTan/AdventOfCode2022/aoc2022"
 	"github.com/samber/lo"
 )
 
@@ -24,18 +25,21 @@ type Solution03 struct {}
 
 type Day03 struct{}
 
-func (day *Day03) BuildProblem(ctx *Context) (Problem, error) {
+func (day *Day03) BuildProblem(ctx *aoc2022.Context) (aoc2022.Problem, error) {
     raw := ctx.SplitLines()
     rucksacks := lo.Map(raw, func(item string, index int) []rune { return []rune(item) })
     return &Problem03{rucksacks}, nil
 }
 
-func (day *Day03) BuildSolution(ctx *Context, problem Problem) (Solution, error) {
+func (day *Day03) BuildSolution(
+    ctx *aoc2022.Context,
+    problem aoc2022.Problem,
+) (aoc2022.Solution, error) {
     return &Solution03{}, nil
 }
 
-func (sol *Solution03) P1(ctx *Context, problem Problem) (any, error) {
-    p03 := TypeCast[Problem03](problem)
+func (sol *Solution03) P1(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
+    p03 := aoc2022.TypeCast[Problem03](problem)
     if p03 == nil {
         return 0, errors.New("bruh")
     }
@@ -51,8 +55,8 @@ func (sol *Solution03) P1(ctx *Context, problem Problem) (any, error) {
     return total, nil
 }
 
-func (sol *Solution03) P2(ctx *Context, problem Problem) (any, error) {
-    p03 := TypeCast[Problem03](problem)
+func (sol *Solution03) P2(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
+    p03 := aoc2022.TypeCast[Problem03](problem)
     if p03 == nil {
         return 0, errors.New("bruh")
     }

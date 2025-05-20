@@ -1,7 +1,9 @@
-package aoc2022
+package aoc2022_d02
 
 import (
 	"errors"
+
+	"github.com/RenoirTan/AdventOfCode2022/aoc2022"
 )
 
 type hand int64
@@ -68,7 +70,7 @@ type Solution02 struct{}
 
 type Day02 struct{}
 
-func (day *Day02) BuildProblem(ctx *Context) (Problem, error) {
+func (day *Day02) BuildProblem(ctx *aoc2022.Context) (aoc2022.Problem, error) {
     lines := ctx.SplitLines()
     n_plays := len(lines)
     plays := make([][2]string, n_plays)
@@ -79,12 +81,15 @@ func (day *Day02) BuildProblem(ctx *Context) (Problem, error) {
     return &Problem02{plays}, nil
 }
 
-func (day *Day02) BuildSolution(ctx *Context,problem Problem) (Solution, error) {
+func (day *Day02) BuildSolution(
+    ctx *aoc2022.Context,
+    problem aoc2022.Problem,
+) (aoc2022.Solution, error) {
     return &Solution02{}, nil
 }
 
-func (sol *Solution02) P1(ctx *Context, problem Problem) (any, error) {
-    p02 := TypeCast[Problem02](problem)
+func (sol *Solution02) P1(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
+    p02 := aoc2022.TypeCast[Problem02](problem)
     if p02 == nil {
         return 0, errors.New("bruh")
     }
@@ -98,8 +103,8 @@ func (sol *Solution02) P1(ctx *Context, problem Problem) (any, error) {
     return score, nil
 }
 
-func (sol *Solution02) P2(ctx *Context, problem Problem) (any, error) {
-    p02 := TypeCast[Problem02](problem)
+func (sol *Solution02) P2(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
+    p02 := aoc2022.TypeCast[Problem02](problem)
     if p02 == nil {
         return 0, errors.New("bruh")
     }

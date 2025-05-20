@@ -1,4 +1,4 @@
-package aoc2022
+package aoc2022_d05
 
 import (
 	"errors"
@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/RenoirTan/AdventOfCode2022/aoc2022"
 	"github.com/samber/lo"
 )
 
@@ -97,7 +98,7 @@ type Solution05 struct {}
 
 type Day05 struct {}
 
-func (day *Day05) BuildProblem(ctx *Context) (Problem, error) {
+func (day *Day05) BuildProblem(ctx *aoc2022.Context) (aoc2022.Problem, error) {
     lines := ctx.SplitLines()
     raw_towers := make([][]string, 0)
     i := 0
@@ -140,7 +141,10 @@ func (day *Day05) BuildProblem(ctx *Context) (Problem, error) {
     return &Problem05{ship, moves}, nil
 }
 
-func (day *Day05) BuildSolution(ctx *Context, problem Problem) (Solution, error) {
+func (day *Day05) BuildSolution(
+    ctx *aoc2022.Context,
+    problem aoc2022.Problem,
+) (aoc2022.Solution, error) {
     return &Solution05{}, nil
 }
 
@@ -155,8 +159,8 @@ func (sol *Solution05) solve(p05 *Problem05, crane9001 bool) (string, error) {
     return strings.Join(top, ""), nil
 }
 
-func (sol *Solution05) P1(ctx *Context, problem Problem) (any, error) {
-    p05 := TypeCast[Problem05](problem)
+func (sol *Solution05) P1(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
+    p05 := aoc2022.TypeCast[Problem05](problem)
     if p05 == nil {
         return 0, errors.New("Bruh")
     }
@@ -168,8 +172,8 @@ func (sol *Solution05) P1(ctx *Context, problem Problem) (any, error) {
     }
 }
 
-func (sol *Solution05) P2(ctx *Context, problem Problem) (any, error) {
-    p05 := TypeCast[Problem05](problem)
+func (sol *Solution05) P2(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
+    p05 := aoc2022.TypeCast[Problem05](problem)
     if p05 == nil {
         return 0, errors.New("Bruh")
     }

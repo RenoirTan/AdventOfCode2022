@@ -1,9 +1,10 @@
-package aoc2022
+package aoc2022_d01
 
 import (
 	"errors"
 	"strconv"
 
+	"github.com/RenoirTan/AdventOfCode2022/aoc2022"
 	"github.com/samber/lo"
 )
 
@@ -18,7 +19,7 @@ type Solution01 struct{
 
 type Day01 struct{}
 
-func (day *Day01) BuildProblem(ctx *Context) (Problem, error) {
+func (day *Day01) BuildProblem(ctx *aoc2022.Context) (aoc2022.Problem, error) {
     lines := ctx.SplitLines()
     n_elves := 1
     for _, line := range lines {
@@ -46,8 +47,11 @@ func (day *Day01) BuildProblem(ctx *Context) (Problem, error) {
     return &Problem01{elves}, nil
 }
 
-func (day *Day01) BuildSolution(ctx *Context, problem Problem) (Solution, error) {
-    p01 := TypeCast[Problem01](problem)
+func (day *Day01) BuildSolution(
+    ctx *aoc2022.Context,
+    problem aoc2022.Problem,
+) (aoc2022.Solution, error) {
+    p01 := aoc2022.TypeCast[Problem01](problem)
     if p01 == nil {
         return nil, errors.New("bruh")
     }
@@ -65,14 +69,14 @@ func (sol *Solution01) sumRations(p01 *Problem01) {
         calories := lo.Sum(rations)
         totals[elf] = calories
     }
-    Sort(totals)
+    aoc2022.Sort(totals)
     sol.RationTotals = totals
 }
 
-func (sol *Solution01) P1(ctx *Context, problem Problem) (any, error) {
+func (sol *Solution01) P1(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
     return sol.RationTotals[len(sol.RationTotals) - 1], nil
 }
 
-func (sol *Solution01) P2(ctx *Context, problem Problem) (any, error) {
+func (sol *Solution01) P2(ctx *aoc2022.Context, problem aoc2022.Problem) (any, error) {
     return lo.Sum(sol.RationTotals[len(sol.RationTotals) - 3:]), nil
 }

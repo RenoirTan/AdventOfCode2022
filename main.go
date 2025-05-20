@@ -6,16 +6,21 @@ import (
 	"github.com/alecthomas/kong"
 
 	"github.com/RenoirTan/AdventOfCode2022/aoc2022"
+	aoc2022_d01 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d01"
+	aoc2022_d02 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d02"
+	aoc2022_d03 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d03"
+	aoc2022_d04 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d04"
+	aoc2022_d05 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d05"
 )
 
 func GetDay(d uint64) aoc2022.Day {
     return []aoc2022.Day{
         nil,
-        &aoc2022.Day01{},
-        &aoc2022.Day02{},
-        &aoc2022.Day03{},
-        &aoc2022.Day04{},
-        &aoc2022.Day05{},
+        &aoc2022_d01.Day01{},
+        &aoc2022_d02.Day02{},
+        &aoc2022_d03.Day03{},
+        &aoc2022_d04.Day04{},
+        &aoc2022_d05.Day05{},
     }[d]
 }
 
