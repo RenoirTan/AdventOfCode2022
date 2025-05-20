@@ -8,6 +8,17 @@ import (
 	"github.com/RenoirTan/AdventOfCode2022/aoc2022"
 )
 
+func GetDay(d uint64) aoc2022.Day {
+    return []aoc2022.Day{
+        nil,
+        &aoc2022.Day01{},
+        &aoc2022.Day02{},
+        &aoc2022.Day03{},
+        &aoc2022.Day04{},
+        &aoc2022.Day05{},
+    }[d]
+}
+
 var CLI struct {
     Day int `arg:"" help:"Day to solve"`
     FilePath string `arg:"" help:"Path to input file"`
@@ -19,7 +30,7 @@ func main() {
     context := aoc2022.ContextDefault()
     context.OnDay(CLI.Day)
     context.WithInputFromPath(CLI.FilePath)
-    day := aoc2022.GetDay(uint64(context.Day))
+    day := GetDay(uint64(context.Day))
     problem, err := day.BuildProblem(&context)
     if err != nil {
         panic(err)
