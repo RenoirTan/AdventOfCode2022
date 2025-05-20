@@ -2,7 +2,6 @@ package aoc2022
 
 import (
 	"errors"
-	"fmt"
 	"regexp"
 	"slices"
 	"strconv"
@@ -156,7 +155,7 @@ func (sol *Solution05) solve(p05 *Problem05, crane9001 bool) (string, error) {
     return strings.Join(top, ""), nil
 }
 
-func (sol *Solution05) P1(ctx *Context, problem Problem) (int64, error) {
+func (sol *Solution05) P1(ctx *Context, problem Problem) (any, error) {
     p05 := TypeCast[Problem05](problem)
     if p05 == nil {
         return 0, errors.New("Bruh")
@@ -165,12 +164,11 @@ func (sol *Solution05) P1(ctx *Context, problem Problem) (int64, error) {
     if err != nil {
         return 0, err
     } else {
-        fmt.Println(top)
-        return 0, err
+        return top, nil
     }
 }
 
-func (sol *Solution05) P2(ctx *Context, problem Problem) (int64, error) {
+func (sol *Solution05) P2(ctx *Context, problem Problem) (any, error) {
     p05 := TypeCast[Problem05](problem)
     if p05 == nil {
         return 0, errors.New("Bruh")
@@ -179,7 +177,6 @@ func (sol *Solution05) P2(ctx *Context, problem Problem) (int64, error) {
     if err != nil {
         return 0, err
     } else {
-        fmt.Println(top)
-        return 0, err
+        return top, nil
     }
 }

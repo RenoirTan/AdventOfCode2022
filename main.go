@@ -44,7 +44,8 @@ func main() {
         if err != nil {
             panic(err)
         } else {
-            fmt.Printf("Part 1: %d\n", answer)
+            fmt.Print("Part 1: ")
+            fmt.Println(answer)
         }
     }
     if CLI.Part == nil || *CLI.Part == 2 {
@@ -52,7 +53,8 @@ func main() {
         if err != nil {
             panic(err)
         } else {
-            fmt.Printf("Part 2: %d\n", answer)
+            fmt.Print("Part 2: ")
+            fmt.Println(answer)
         }
     }
 }

@@ -34,7 +34,7 @@ func (day *Day03) BuildSolution(ctx *Context, problem Problem) (Solution, error)
     return &Solution03{}, nil
 }
 
-func (sol *Solution03) P1(ctx *Context, problem Problem) (int64, error) {
+func (sol *Solution03) P1(ctx *Context, problem Problem) (any, error) {
     p03 := TypeCast[Problem03](problem)
     if p03 == nil {
         return 0, errors.New("bruh")
@@ -51,7 +51,7 @@ func (sol *Solution03) P1(ctx *Context, problem Problem) (int64, error) {
     return total, nil
 }
 
-func (sol *Solution03) P2(ctx *Context, problem Problem) (int64, error) {
+func (sol *Solution03) P2(ctx *Context, problem Problem) (any, error) {
     p03 := TypeCast[Problem03](problem)
     if p03 == nil {
         return 0, errors.New("bruh")

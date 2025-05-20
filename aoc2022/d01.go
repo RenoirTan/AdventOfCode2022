@@ -69,10 +69,10 @@ func (sol *Solution01) sumRations(p01 *Problem01) {
     sol.RationTotals = totals
 }
 
-func (sol *Solution01) P1(ctx *Context, problem Problem) (int64, error) {
+func (sol *Solution01) P1(ctx *Context, problem Problem) (any, error) {
     return sol.RationTotals[len(sol.RationTotals) - 1], nil
 }
 
-func (sol *Solution01) P2(ctx *Context, problem Problem) (int64, error) {
+func (sol *Solution01) P2(ctx *Context, problem Problem) (any, error) {
     return lo.Sum(sol.RationTotals[len(sol.RationTotals) - 3:]), nil
 }
