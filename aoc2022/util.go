@@ -32,3 +32,11 @@ func Sort[T cmp.Ordered](s []T) {
         return s[i] < s[j]
     })
 }
+
+func BToi(b bool) int {
+    if b {
+        return 1
+    } else {
+        return 0
+    }
+}
