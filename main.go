@@ -15,6 +15,7 @@ import (
 	aoc2022_d07 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d07"
 	aoc2022_d08 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d08"
 	aoc2022_d09 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d09"
+	aoc2022_d10 "github.com/RenoirTan/AdventOfCode2022/aoc2022/d10"
 )
 
 func GetDay(d uint64) aoc2022.Day {
@@ -29,6 +30,7 @@ func GetDay(d uint64) aoc2022.Day {
         &aoc2022_d07.Day07{},
         &aoc2022_d08.Day08{},
         &aoc2022_d09.Day09{},
+        &aoc2022_d10.Day10{},
     }[d]
 }
 
